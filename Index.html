@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diversitat en Acció</title>
+<title>Diversitat en Acció - Pineda de Mar</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Projecte de sensibilització i promoció del col·lectiu LGTBIQ+ a Pineda de Mar">
 
 <style>
 
@@ -22,19 +21,18 @@ html{
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background:#f5f5f5;
     color:#222;
     overflow-x:hidden;
 }
 
-/* HERO */
-
+/* HERO - Imagen de respaldo local por si Unsplash falla */
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop");
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="%238c52ff"/><circle cx="400" cy="450" r="200" fill="%23ff4fa3" opacity="0.5"/><circle cx="1200" cy="400" r="250" fill="%234fc3ff" opacity="0.4"/><polygon points="800,200 950,500 650,500" fill="%23ffd700" opacity="0.3"/></svg>');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -46,13 +44,22 @@ body{
 }
 
 .hero-content h1{
-    font-size:5rem;
+    font-size:4.5rem;
     margin-bottom:20px;
     animation:fadeUp 1s ease;
 }
 
+@media(max-width:768px){
+    .hero-content h1{
+        font-size:2.8rem;
+    }
+    .hero-content p{
+        font-size:1.2rem;
+    }
+}
+
 .hero-content p{
-    font-size:1.4rem;
+    font-size:1.3rem;
     max-width:800px;
     margin:auto;
     margin-bottom:30px;
@@ -67,17 +74,18 @@ body{
     border-radius:50px;
     font-weight:bold;
     transition:0.3s;
+    display:inline-block;
 }
 
 .hero-content a:hover{
     background:#8c52ff;
+    transform:scale(1.05);
 }
 
 /* NAV */
-
 nav{
     background:#111;
-    padding:18px;
+    padding:15px;
     position:sticky;
     top:0;
     z-index:999;
@@ -87,9 +95,17 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 18px;
+    margin:0 15px;
     font-weight:bold;
     transition:0.3s;
+    display:inline-block;
+}
+
+@media(max-width:600px){
+    nav a{
+        margin:0 8px;
+        font-size:0.85rem;
+    }
 }
 
 nav a:hover{
@@ -97,22 +113,20 @@ nav a:hover{
 }
 
 /* SECTIONS */
-
 section{
     max-width:1200px;
     margin:auto;
-    padding:80px 25px;
+    padding:60px 25px;
 }
 
 section h2{
     text-align:center;
-    font-size:2.7rem;
-    margin-bottom:50px;
+    font-size:2.5rem;
+    margin-bottom:40px;
     color:#8c52ff;
 }
 
 /* CARDS */
-
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -124,30 +138,31 @@ section h2{
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.4s;
+    transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 .card img{
     width:100%;
-    height:240px;
+    height:220px;
     object-fit:cover;
+    background:#ddd;
 }
 
 .card-content{
-    padding:25px;
+    padding:20px;
 }
 
 .card-content h3{
-    margin-bottom:15px;
+    margin-bottom:12px;
     color:#ff4fa3;
 }
 
 /* PROJECTE */
-
 .projecte{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -159,34 +174,38 @@ section h2{
     width:100%;
     border-radius:20px;
     box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    background:#ddd;
 }
 
 .projecte-text p{
-    margin-bottom:20px;
-    line-height:1.8;
+    margin-bottom:18px;
+    line-height:1.6;
 }
 
 /* INSTAGRAM */
-
 .instagram{
-    background:linear-gradient(90deg,#ff4fa3,#8c52ff,#4fc3ff);
+    background:linear-gradient(135deg,#ff4fa3,#8c52ff,#4fc3ff);
     color:white;
     text-align:center;
     border-radius:25px;
-    padding:60px 20px;
+    padding:50px 20px;
 }
 
 .instagram h2{
     color:white;
+    margin-bottom:15px;
+}
+
+.instagram p{
+    margin-bottom:20px;
 }
 
 .instagram a{
     display:inline-block;
-    margin-top:20px;
     background:white;
     color:#222;
     text-decoration:none;
-    padding:15px 30px;
+    padding:12px 28px;
     border-radius:50px;
     font-weight:bold;
     transition:0.3s;
@@ -194,20 +213,37 @@ section h2{
 
 .instagram a:hover{
     transform:scale(1.05);
+    background:#ff4fa3;
+    color:white;
 }
 
 /* FOOTER */
-
 footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:30px;
-    margin-top:60px;
+    padding:25px;
+    margin-top:40px;
+}
+
+/* Enlaces del proyecto */
+.projecte-text a{
+    text-decoration:none;
+    background:#ff4fa3;
+    color:white;
+    padding:12px 25px;
+    border-radius:50px;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.projecte-text a:hover{
+    background:#8c52ff;
+    transform:scale(1.02);
 }
 
 /* ANIMATION */
-
 @keyframes fadeUp{
     from{
         opacity:0;
@@ -220,17 +256,16 @@ footer{
 }
 
 /* RESPONSIVE */
-
 @media(max-width:900px){
-
-    .hero-content h1{
-        font-size:3rem;
-    }
-
     .projecte{
         grid-template-columns:1fr;
     }
-
+    section h2{
+        font-size:2rem;
+    }
+    section{
+        padding:40px 20px;
+    }
 }
 
 </style>
@@ -239,27 +274,19 @@ footer{
 <body>
 
 <!-- HERO -->
-
 <header class="hero">
-
     <div class="hero-content">
-
-        <h1>Diversitat en Acció</h1>
-
+        <h1>🏳️‍🌈 Diversitat en Acció</h1>
         <p>
             Sensibilització i promoció del col·lectiu LGTBIQ+ a Pineda de Mar
         </p>
-
         <a href="#projecte">
-            Descobreix el projecte
+            Descobreix el projecte →
         </a>
-
     </div>
-
 </header>
 
 <!-- NAV -->
-
 <nav>
     <a href="#projecte">Projecte</a>
     <a href="#objectius">Objectius</a>
@@ -270,308 +297,195 @@ footer{
 </nav>
 
 <!-- PROJECTE -->
-
 <section id="projecte">
-
     <h2>Sobre el projecte</h2>
-
     <div class="projecte">
-
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop">
-
+        <img src="https://placehold.co/600x400/8c52ff/white?text=Diversitat+en+Acci%C3%B3" alt="Diversitat en Acció">
         <div class="projecte-text">
-
             <p>
-                El projecte “Diversitat en Acció” neix a partir d’un diagnòstic social
+                El projecte "Diversitat en Acció" neix a partir d'un diagnòstic social
                 sobre la situació del col·lectiu LGTBIQ+ a Pineda de Mar.
             </p>
-
             <p>
-                A través d’enquestes, entrevistes i anàlisi dels recursos municipals,
+                A través d'enquestes, entrevistes i anàlisi dels recursos municipals,
                 es van detectar necessitats com el desconeixement del SAI, la manca
-                de sensibilització i la falta d’espais segurs.
+                de sensibilització i la falta d'espais segurs.
             </p>
-
             <p>
                 Per això, el projecte busca crear una comunitat més inclusiva,
                 segura i respectuosa amb totes les identitats.
             </p>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- OBJECTIUS -->
-
 <section id="objectius">
-
     <h2>Objectius</h2>
-
     <div class="cards">
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/ff4fa3/white?text=Inclusi%C3%B3" alt="Inclusió">
             <div class="card-content">
-
-                <h3>Inclusió</h3>
-
+                <h3>🏳️‍🌈 Inclusió</h3>
                 <p>
                     Promoure la inclusió i la visibilització del col·lectiu LGTBIQ+
                     dins del municipi.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/4fc3ff/white?text=Sensibilitzaci%C3%B3" alt="Sensibilització">
             <div class="card-content">
-
-                <h3>Sensibilització</h3>
-
+                <h3>📢 Sensibilització</h3>
                 <p>
                     Reduir prejudicis i actituds discriminatòries a través
                     de tallers i activitats educatives.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/8c52ff/white?text=Espais+Segurs" alt="Espais segurs">
             <div class="card-content">
-
-                <h3>Espais segurs</h3>
-
+                <h3>🤝 Espais segurs</h3>
                 <p>
                     Crear espais participatius on les persones joves
                     se sentin escoltades i respectades.
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- ACTIVITATS -->
-
 <section id="activitats">
-
     <h2>Activitats principals</h2>
-
     <div class="cards">
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/ff4fa3/white?text=Coneix+el+SAI" alt="Campanya SAI">
             <div class="card-content">
-
-                <h3>Campanya “Coneix el teu SAI”</h3>
-
+                <h3>📱 Campanya "Coneix el teu SAI"</h3>
                 <p>
                     Difusió de cartells, xarxes socials i xerrades informatives
-                    per donar visibilitat al Servei d’Atenció Integral.
+                    per donar visibilitat al Servei d'Atenció Integral.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/8c52ff/white?text=Tallers" alt="Tallers">
             <div class="card-content">
-
-                <h3>Tallers de sensibilització</h3>
-
+                <h3>🎓 Tallers de sensibilització</h3>
                 <p>
                     Sessions als instituts per treballar la diversitat,
-                    la prevenció de l’assetjament i el respecte.
+                    la prevenció de l'assetjament i el respecte.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200&auto=format&fit=crop">
-
+            <img src="https://placehold.co/600x400/4fc3ff/white?text=Espai+Jove" alt="Espai jove">
             <div class="card-content">
-
-                <h3>Espai jove</h3>
-
+                <h3>🌟 Espai jove</h3>
                 <p>
                     Espai de trobada mensual per fomentar el suport mutu
                     i la participació comunitària.
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- AVALUACIÓ -->
-
 <section id="avaluacio">
-
-    <h2>Pla d’avaluació</h2>
-
+    <h2>Pla d'avaluació</h2>
     <div class="cards">
-
         <div class="card">
-
             <div class="card-content">
-
-                <h3>Diagnòstic</h3>
-
+                <h3>📊 Diagnòstic</h3>
                 <p>
-                    S’avalua si les tècniques d’investigació utilitzades
+                    S'avalua si les tècniques d'investigació utilitzades
                     han permès identificar correctament les necessitats
                     del col·lectiu.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
             <div class="card-content">
-
-                <h3>Procés</h3>
-
+                <h3>🔄 Procés</h3>
                 <p>
                     Es fa seguiment de la participació, interès i impacte
                     de les activitats durant el projecte.
                 </p>
-
             </div>
-
         </div>
-
         <div class="card">
-
             <div class="card-content">
-
-                <h3>Resultats</h3>
-
+                <h3>🏆 Resultats</h3>
                 <p>
                     Es valora si el projecte ha millorat la sensibilització,
                     el coneixement del SAI i la inclusió social.
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- SERVEI D'ATENCIÓ INTEGRAL (SAI) -->
-
 <section id="sai">
-
-    <h2>Servei d’Atenció Integral (SAI)</h2>
-
+    <h2>Servei d'Atenció Integral (SAI)</h2>
     <div class="projecte">
-
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop" alt="SAI Pineda de Mar">
-
+        <img src="https://placehold.co/600x400/ff4fa3/white?text=SAI+Pineda+de+Mar" alt="SAI Pineda de Mar">
         <div class="projecte-text">
-
             <p>
-                El Servei d’Atenció Integral (SAI) de Pineda de Mar és un recurs
+                El Servei d'Atenció Integral (SAI) de Pineda de Mar és un recurs
                 destinat a informar, orientar i donar suport a les persones del
                 col·lectiu LGTBIQ+ i també al seu entorn.
             </p>
-
             <p>
                 Aquest servei ofereix assessorament davant situacions de discriminació,
                 suport emocional, informació sobre recursos i acompanyament en diferents
                 àmbits socials i personals.
             </p>
-
             <p>
                 A través del nostre projecte volem donar més visibilitat al SAI,
                 ja que moltes persones del municipi desconeixen la seva existència
                 o no saben com accedir-hi.
             </p>
-
             <p>
                 Per aquest motiu, una de les activitats principals del projecte és
-                la campanya “Coneix el teu SAI”, orientada especialment a la població
+                la campanya "Coneix el teu SAI", orientada especialment a la població
                 jove i als centres educatius.
             </p>
-
             <br>
-
-            <a href="https://www.pinedademar.cat" target="_blank"
-            style="
-            text-decoration:none;
-            background:#ff4fa3;
-            color:white;
-            padding:15px 25px;
-            border-radius:50px;
-            font-weight:bold;
-            display:inline-block;
-            ">
-            Més informació
+            <a href="https://www.pinedademar.cat" target="_blank">
+                Més informació →
             </a>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- INSTAGRAM -->
-
 <section id="instagram">
-
     <div class="instagram">
-
-        <h2>Segueix el projecte a Instagram</h2>
-
+        <h2>📸 Segueix el projecte a Instagram</h2>
         <p>
-            Comparteix, participa i ajuda’ns a donar visibilitat al col·lectiu LGTBIQ+
+            Comparteix, participa i ajuda'ns a donar visibilitat al col·lectiu LGTBIQ+
         </p>
-
-        <a href="https://instagram.com/diversitat_en_accio" target="_blank">
+        <a href="#" target="_blank">
             @diversitat_en_accio
         </a>
-
+        <p style="font-size:0.8rem; margin-top:15px; opacity:0.8;">
+            (Properament actiu)
+        </p>
     </div>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
     <p>
-        Diversitat en Acció · Projecte d’Integració Social · Pineda de Mar
+        🏳️‍🌈 Diversitat en Acció · Projecte d'Integració Social · Pineda de Mar
     </p>
-
+    <p style="font-size:0.8rem; margin-top:10px; opacity:0.7;">
+        Amb el suport de l'Ajuntament de Pineda de Mar
+    </p>
 </footer>
 
 </body>
